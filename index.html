@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <title>NBA Player Information</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="autocomplete.css">   
+</head>
+<body>
+  <div class="container">
+   <h1>NBA Player Information</h1>
+ <img src="nba_logo.png" alt="NBA Logo" class="logo">
+
+    <input type="text" id="searchInput" class="autocomplete" placeholder="Search for a player">
+    <button onclick="searchPlayer()">Search</button>
+    <div id="playerInfo"></div>
+
+  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.1/autocomplete.jquery.min.js" integrity="sha512-HJ+lF1L08pRq/4okkWG+Rsskjy0p1FtkcYX0RhVaHq6J/pwflJumUbmiCBiXdu0UUevBJvMGb2QHfCzXV5TpfQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <script src="app.js"></script>
+</body>
+</html>
