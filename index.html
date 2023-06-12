@@ -1,36 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package_v0.16/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/./favicon_package_v0.16/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon_package_v0.16/favicon-16x16.png">
-<link rel="manifest" href="/favicon_package_v0.16/site.webmanifest">
-<link rel="mask-icon" href="./favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
-    <title>Document</title>
-</head>
-<body>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_package_v0.16/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_package_v0.16/favicon-16x16.png">
+  <link rel="manifest" href="/favicon_package_v0.16/site.webmanifest">
+  <link rel="mask-icon" href="./favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="autocomplete.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
   <title>NBA Player Information</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" href="autocomplete.css">   
 </head>
+
 <body>
-  <div class="container">
-   <h1>NBA Player Information</h1>
- <img src="nba_logo.png" alt="NBA Logo" class="logo">
-
-    <input type="text" id="searchInput" class="autocomplete" placeholder="Search for a player">
-    <button onclick="searchPlayer()">Search</button>
-    <div id="playerInfo"></div>
-
+ <header>
+  <nav class="navbar">
+    <div class="menu-icon">
+      <div class="menu-icon-bar"></div>
+      <div class="menu-icon-bar"></div>
+      <div class="menu-icon-bar"></div>
+    </div>
+    <div class="logo">
+      <img src="/assets/img/nba_logo.png" alt="Logo">
+    </div>
+    <div class="navItems">
+      <a href="#">Games</a>
+      <a href="#">Top Stories</a>
+      <a href="#">Video</a>
+      <a href="#">Standings</a>
+      <a href="#">Stats</a>
+      <a href="#">Players</a>
+      <a href="#">Teams</a>
+    </div>
+    <div class="right-items">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+    </div>
+  </nav>
+  <div class="wallpaper">
+    <div class="background">
+      <!-- Add your background image or content here -->
+    </div>
   </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.1/autocomplete.jquery.min.js" integrity="sha512-HJ+lF1L08pRq/4okkWG+Rsskjy0p1FtkcYX0RhVaHq6J/pwflJumUbmiCBiXdu0UUevBJvMGb2QHfCzXV5TpfQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-    <script src="app.js"></script>
+</header>
+
+<section class="player-profile-compare">
+
+  <div class="content-left">
+    <span class="breadcrumb">
+      <a href="/">
+        <span>Home</span>
+      </a>
+      <a href="#" class="ng-binding"> / Players</a> / Player Comparison
+    </span>
+  </div>
+
+  <div class="tab-container">
+    <!-- Tab Links the take you to player stats,Player compare and player news -->
+    <div class="tab-links">
+      <button class="tab-link active" data-tab="tab1">Stats</button>
+      <button class="tab-link" data-tab="tab2">Compare</button>
+      <button class="tab-link" data-tab="tab3">News</button>
+    </div>
+    <div class="tab-content" id="tab1">
+
+      <div class="container">
+          <h1>NBA Player Information</h1>
+          <input type="text" id="PlayerStat" class="autoComplete" placeholder="Search for a player">
+          <button onclick="StatsearchPlayer()">Search</button>
+          <div id="playerSatsInfo"></div>
+      </div>
+
+    </div>
+        <div class="tab-content" id="tab2">
+          <h1>Player Comparison</h1>
+         <div class="container">
+              <div class="player-container">
+                <input type="text" id="searchInput1" class="autocomplete" placeholder="Search for Player 1">
+                <button onclick="searchPlayer(1)">Search</button>
+                <div id="playerInfo1"></div>
+              </div>
+              <div class="player-container">
+                <input type="text" id="searchInput2" class="autocomplete" placeholder="Search for Player 2">
+                <button onclick="searchPlayer(2)">Search</button>
+                <div id="playerInfo2"></div>
+              </div>
+        </div>
+
+
+        </div>
+
+        <!-- News Tab -->
+        <div class="tab-content" id="tab3">
+          <h1>NBA Player Search</h1>
+    
+    <label for="playerName">Enter player name:</label>
+    <input type="text" id="playerName" />
+    <button id="searchButton">Search</button>
+    
+    <div id="results"></div>
+        </div>
+  </div>
+
+</section>
+
+
+
+<!-- js files -->
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/tabs.js"></script>
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/player_comparison.js"></script>
+  <script src="/assets/js/playerSearch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.1/autocomplete.jquery.min.js"
+    integrity="sha512-HJ+lF1L08pRq/4okkWG+Rsskjy0p1FtkcYX0RhVaHq6J/pwflJumUbmiCBiXdu0UUevBJvMGb2QHfCzXV5TpfQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
+
 </html>
